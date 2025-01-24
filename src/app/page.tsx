@@ -11,15 +11,18 @@ export default function Home() {
   return (
     <div>
       {!user ? (
-        <a href="/api/auth/login">Login</a>
+        <a href="/api/auth/login" className="m-16 text-3xl text-leaf-green">Login</a>
       ) : (
         <>
-        <div className="flex flex-col items-center justify-center min-h-screen bg-apple-green-20 text-2xl">
+        <div className="flex flex-col items-center justify-center min-h-screen bg-apple-green-20 text-2xl text-leaf-green">
           <p>Welcome, {user.name}!</p>
-          <Link href="/dashboardHome/dashboardHome" className="m-16 text-3xl">
+          <Link href={{
+              pathname: '/dashboardHome/dashboardHome',
+              query: { userName : user.name },
+            }} className="m-16 text-3xl text-leaf-green">
             Go to Dashboard Home
           </Link> 
-          <a href="/api/auth/logout">Logout</a>
+          <a href="/api/auth/logout" className="m-16 text-3xl text-leaf-green">Logout</a>
         </div>
         </>
       )}

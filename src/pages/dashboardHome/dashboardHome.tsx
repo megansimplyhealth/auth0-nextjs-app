@@ -8,6 +8,7 @@ import DynamicBanner from "../../componets/dynamicBanner";
 import AppCard from "../../componets/appCard";
 import BarChart from "../../componets/barChart";
 import ClaimTable from "../../componets/claimTable";
+import { useRouter } from 'next/router';
 
 const claimData = [
   {
@@ -70,6 +71,9 @@ const claimData = [
 
 export default function DashboardHome() {
 
+  const router = useRouter();
+  const { userName } = router.query;
+
     return (
       <div className="bg-background-grey min-h-screen">
         
@@ -89,7 +93,7 @@ export default function DashboardHome() {
             </div>
 
             <div className="flex items-center">
-              <AccountAvatar lastName="Knaresborough" role="Dentist" />
+              <AccountAvatar lastName={userName?.toString() ?? ""} role="Dentist" />
             </div>
           </div>
         </div>
