@@ -72,15 +72,19 @@ const claimData = [
 ];
 
 export default function Home() {
-  const { user } = useUser();
-
-  useEffect(() => {
-    if (!user) {
-      window.location.href = '/api/auth/login'; 
-    }
-  }, [user]);
+  const { user, isLoading } = useUser();
 
   const surname = user?.name?.split(' ')[1];
+
+  useEffect(() => {
+    if (!isLoading && !user) {
+      window.location.href = '/api/auth/login'; // Redirect to Auth0 login page if not authenticated
+    }
+  }, [user, isLoading]);
+
+  if (isLoading) {
+    return <div>Loading...</div>; 
+  }
 
   return (
     <div>
