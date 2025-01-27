@@ -1,5 +1,5 @@
-import { IconButton } from '@material-ui/core';
-import { AppsOutlined, HomeOutlined, NotificationsOutlined, SettingsOutlined } from '@material-ui/icons';
+import IconButton from '@mui/material/IconButton';
+import { AppsOutlined, HomeOutlined, NotificationsOutlined, SettingsOutlined } from '@mui/icons-material';
 import 'tailwindcss/tailwind.css'
 
 

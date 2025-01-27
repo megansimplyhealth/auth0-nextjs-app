@@ -14,7 +14,7 @@ const AppCard = (props: CardProps) => {
         <div className="relative bg-transparent">
             <div className="mb-6">
                 <p className="text-left pb-2">
-                    <strong className="text-4xl text-black">{props.title}</strong>
+                    <strong className="text-xl text-black">{props.title}</strong>
                 </p>
                 <div className="flex border border-b-2 border-leaf-green"/>
                 <p className="text-left mt-">

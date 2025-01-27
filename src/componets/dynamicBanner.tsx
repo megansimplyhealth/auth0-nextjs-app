@@ -1,6 +1,6 @@
 import 'tailwindcss/tailwind.css'
-import { IconButton } from "@material-ui/core";
-import { ArrowBackOutlined, ArrowForwardOutlined } from '@material-ui/icons';
+import IconButton from '@mui/material/IconButton';
+import { ArrowBackOutlined, ArrowForwardOutlined } from '@mui/icons-material';
 import Image from 'next/image';
 
 type ImagePropsType = {

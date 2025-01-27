@@ -1,8 +1,8 @@
 
 import 'tailwindcss/tailwind.css'
 import Image from 'next/image';
-import { IconButton } from '@material-ui/core';
-import { KeyboardArrowDownOutlined } from '@material-ui/icons';
+import IconButton from '@mui/material/IconButton';
+import KeyboardArrowDownOutlined from '@mui/icons-material/KeyboardArrowDownOutlined';
 
 
 interface AccountAvatarProps {

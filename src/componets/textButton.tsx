@@ -1,8 +1,9 @@
 
 import 'tailwindcss/tailwind.css'
 import { MouseEvent } from 'react';
-import { Button, IconButton } from '@material-ui/core';
-import { ArrowForwardOutlined } from '@material-ui/icons';
+import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
+import ArrowForwardOutlined from '@mui/icons-material/ArrowForwardOutlined';
 
 
 interface TextButtonProps {

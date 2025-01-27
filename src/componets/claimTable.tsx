@@ -1,5 +1,5 @@
 import 'tailwindcss/tailwind.css'
-import { CloseOutlined, DoneOutlined, CachedOutlined } from '@material-ui/icons';
+import { CloseOutlined, DoneOutlined, CachedOutlined } from '@mui/icons-material';
 import { JSX, useState } from 'react';
 
 type claimPropsType = {
@@ -126,7 +126,7 @@ const StatusBadge: React.FC<{ status: string }> = ({ status }) => {
         <tbody className="bg-white divide-y divide-gray-3">
           {claims.map((claim, index) => (
             <tr key={index}>
-              <td className="px-6 py-4 whitespace-nowrap text-base text-gray-900 border-b border-gray-3">
+              <td className="px-6 py-4 whitespace-nowrap text-base text-black border-b border-gray-3">
                 <div className="flex items-center">
                   <input
                     type="checkbox"
@@ -137,16 +137,16 @@ const StatusBadge: React.FC<{ status: string }> = ({ status }) => {
                   <span className="ml-2">{claim.claimId}</span>
                 </div>
               </td>
-              <td className="px-6 py-4 whitespace-nowrap text-base text-gray-900 border-b border-gray-3">
+              <td className="px-6 py-4 whitespace-nowrap text-base text-black border-b border-gray-3">
                 {claim.date}
               </td>
-              <td className="px-6 py-4 whitespace-nowrap text-base text-gray-900 border-b border-gray-3">
+              <td className="px-6 py-4 whitespace-nowrap text-base text-black border-b border-gray-3">
                 {`${claim.patientFirstname} ${claim.patientLastname}`}
               </td>
-              <td className="px-6 py-4 bg-transparent whitespace-nowrap text-base text-gray-900 border-b border-gray-3">
+              <td className="px-6 py-4 bg-transparent whitespace-nowrap text-base text-black border-b border-gray-3">
                 <StatusBadge status={claim.status || ""} />
               </td>
-              <td className="px-6 py-4 whitespace-nowrap text-base text-gray-900 border-b border-gray-3">
+              <td className="px-6 py-4 whitespace-nowrap text-base text-black border-b border-gray-3">
                 {claim.amount ? `£${claim.amount.toFixed(2)}` : "N/A"}
               </td>
             </tr>
