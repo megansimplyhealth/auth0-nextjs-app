@@ -103,10 +103,11 @@ export default function DashboardHome() {
           <DynamicBanner image={[{src: '/images/denplan-bike.png', link: 'https://www.denplan.co.uk/the-core/industry-and-company-news/cycling-conference'}, {src: "/images/DenplanSummit2025.png", link: "https://www.denplan.co.uk/dentists/events/the-denplan-summit-2025.html"}]} />
         </div>
 
-        <div className="absolute w-full mt-64 border-t-2 border-leaf-green-40"/>
+        {/* divider */}
+        <div className="absolute w-full mt-72 border-t-2 border-leaf-green-40"/>
 
         {/* search bar */}
-        <div className="absolute px-10 py-1 z-10 w-full mt-64">
+        <div className="absolute px-10 py-1 z-10 w-full mt-72">
           <div className="flex items-center justify-center w-full mt-4"/>
           <div className="flex items-center justify-center w-full mt-2">
             <div className="w-2/5 bg-white rounded-full">
@@ -117,7 +118,7 @@ export default function DashboardHome() {
         </div>
 
         {/* content section */}
-        <div className="flex justify-center items-center flex-row pt-[23rem] px-10 pb-8">         
+        <div className="flex justify-center items-center flex-row pt-[25rem] px-10 pb-8">         
           <div className="w-10/12">
             <div className="flex flex-row">
               <div className="bg-white border border-grey-2 rounded-xl w-7/12 mr-2 p-6" >
