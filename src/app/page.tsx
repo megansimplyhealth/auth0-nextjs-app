@@ -74,7 +74,8 @@ const claimData = [
 export default function Home() {
   const { user, isLoading } = useUser();
 
-  const surname = user?.name?.split(' ')[1];
+  const userSurname = user?.name?.split(' ')[1];
+  const userAvatar = user?.picture ?? "/images/avatar.jpg";
 
   useEffect(() => {
     if (!isLoading && !user) {
@@ -109,7 +110,7 @@ export default function Home() {
             </div>
 
             <div className="flex items-center">
-              <AccountAvatar lastName={surname} role="Dentist" />
+              <AccountAvatar lastName={userSurname} role="Dentist" image={userAvatar}/>
             </div>
           </div>
         </div>

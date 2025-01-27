@@ -8,17 +8,20 @@ import KeyboardArrowDownOutlined from '@mui/icons-material/KeyboardArrowDownOutl
 interface AccountAvatarProps {
     lastName?: string
     role?: string
+    image?: string
     onClick?: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
 
 const AccountAvatar = (props: AccountAvatarProps) => {
+
+    const avatarImage = props.image ?? "/images/avatar.jpg";
 
     return (
         <div className="bg-white rounded-full flex justify-center items-center w-full h-full border border-grey shadow-lg">
             <div className="flex items-center">
                 <div className="relative">
                     <Image
-                    src="/images/avatar.jpg"
+                    src={avatarImage}
                     alt="Account Avatar" 
                     width={60}
                     height={60}
