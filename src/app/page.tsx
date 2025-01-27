@@ -10,6 +10,7 @@ import DynamicBanner from "../componets/dynamicBanner";
 import AppCard from "../componets/appCard";
 import BarChart from "../componets/barChart";
 import ClaimTable from "../componets/claimTable";
+import { useEffect } from 'react';
 
 const claimData = [
   {
@@ -71,18 +72,22 @@ const claimData = [
 ];
 
 export default function Home() {
-  const { user, error, isLoading } = useUser();
+  const { user } = useUser();
 
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>{error.message}</div>;
+  useEffect(() => {
+    if (!user) {
+      window.location.href = '/api/auth/login'; 
+    }
+  }, [user]);
+
+  const surname = user?.name?.split(' ')[1];
 
   return (
     <div>
-      {!user ? (
-        <a href="/api/auth/login" className="m-16 text-3xl text-leaf-green">Login</a>
-      ) : (
-        <>
+      {user ? (
         <div className="bg-background-grey min-h-screen">
+
+          <a href="/api/auth/logout" className="m-16 text-3xl text-leaf-green">Logout</a>
         
         {/* header */}
         <div className="absolute text-leaf-green px-10 py-1 z-10 w-full">
@@ -100,7 +105,7 @@ export default function Home() {
             </div>
 
             <div className="flex items-center">
-              <AccountAvatar lastName={user.name! ?? ""} role="Dentist" />
+              <AccountAvatar lastName={surname} role="Dentist" />
             </div>
           </div>
         </div>
@@ -209,11 +214,9 @@ export default function Home() {
           </div>
         </div>
       </div>
-        {/* <div className="flex flex-col items-center justify-center min-h-screen bg-apple-green-20 text-2xl text-leaf-green">
-          <a href="/api/auth/logout" className="m-16 text-3xl text-leaf-green">Logout</a>
-        </div> */}
-        </>
+      ) : (
+        <></>
       )}
     </div>
   );
-}
+};
