@@ -5,6 +5,8 @@ const nextConfig: NextConfig = {
     domains: [
       's.gravatar.com',
       'cdn.auth0.com',
+      'wallpapercave.com',
+      'images.squarespace-cdn.com'
     ],
   },
 };
