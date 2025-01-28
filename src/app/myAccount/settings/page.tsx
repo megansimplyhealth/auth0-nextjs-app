@@ -1,14 +1,16 @@
+'use client';
+import { useUser } from '@auth0/nextjs-auth0/client';
 import React from "react"
 import Image from 'next/image';
 import 'tailwindcss/tailwind.css'
-import SearchBar from '../../componets/searchBar'
-import NavigationBar from '../../componets/navigationBar'
-import AccountAvatar from "../../componets/accountAvatar";
-import DynamicBanner from "../../componets/dynamicBanner";
-import AppCard from "../../componets/appCard";
-import BarChart from "../../componets/barChart";
-import ClaimTable from "../../componets/claimTable";
-import { useRouter } from 'next/router';
+import SearchBar from '../../../componets/searchBar'
+import NavigationBar from '../../../componets/navigationBar'
+import AccountAvatar from "../../../componets/accountAvatar";
+import DynamicBanner from "../../../componets/dynamicBanner";
+import AppCard from "../../../componets/appCard";
+import BarChart from "../../../componets/barChart";
+import ClaimTable from "../../../componets/claimTable";
+import { useEffect } from 'react';
 
 const claimData = [
   {
@@ -69,13 +71,26 @@ const claimData = [
   },
 ];
 
-export default function DashboardHome() {
+export default function Settings() {
+  const { user, isLoading } = useUser();
 
-  const router = useRouter();
-  const { userName } = router.query;
+  const userSurname = user?.name?.split(' ')[1];
+  const userAvatar = user?.picture ?? "/images/avatar.jpg";
 
-    return (
-      <div className="bg-background-grey min-h-screen">
+  useEffect(() => {
+    if (!isLoading && !user) {
+      window.location.href = '/api/auth/login'; // Redirect to Auth0 login page if not authenticated
+    }
+  }, [user, isLoading]);
+
+  if (isLoading) {
+    return <div>Loading...</div>; 
+  }
+
+  return (
+    <div>
+      {user ? (
+        <div className="bg-background-grey min-h-screen">
         
         {/* header */}
         <div className="absolute text-leaf-green px-10 py-1 z-10 w-full">
@@ -93,7 +108,7 @@ export default function DashboardHome() {
             </div>
 
             <div className="flex items-center">
-              <AccountAvatar lastName={userName?.toString() ?? ""} role="Dentist" />
+              <AccountAvatar lastName={userSurname} role="Dentist" image={userAvatar}/>
             </div>
           </div>
         </div>
@@ -202,6 +217,9 @@ export default function DashboardHome() {
           </div>
         </div>
       </div>
-    );}
-
-    
+      ) : (
+        <></>
+      )}
+    </div>
+  );
+};

@@ -91,8 +91,6 @@ export default function Home() {
     <div>
       {user ? (
         <div className="bg-background-grey min-h-screen">
-
-          <a href="/api/auth/logout" className="m-16 text-3xl text-leaf-green">Logout</a>
         
         {/* header */}
         <div className="absolute text-leaf-green px-10 py-1 z-10 w-full">
