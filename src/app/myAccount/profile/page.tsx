@@ -42,47 +42,62 @@ export default function Profile() {
         </div>
 
         {/* content section */}
-        <div className="flex justify-center items-center pt-[10rem] px-10 pb-8">
-            <h1 className="text-2xl xl:text-3xl font-extrabold text-leaf-green">
+        <div className="flex flex-col items-center pt-[10rem] px-10 pb-8">
+          <div className="text-center mb-8">
+            <h1 className="text-3xl xl:text-4xl font-extrabold text-leaf-green">
               Profile
             </h1>
-            <p className="text-lg text-secondary-green">Welcome to your profile page, please change your details here</p>
-            <div className="w-full flex-1 mt-8">
-              <div className="mx-auto max-w-xs">
-                <p className="text-lg text-leaf-green">First Name</p>
-                <input
-                  className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mb-2"
-                  type="text" placeholder={userFirstName} />
-                <p className="text-lg text-leaf-green">Surname</p>
-                <input
-                  className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mb-2"
-                  type="text" placeholder={userSurname} />
-                <p className="text-lg text-leaf-green">Email</p>
-                <input
-                  className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mb-2"
-                  type="email" placeholder={userEmail} />
-                <p className="text-lg text-leaf-green">Current Password</p>
-                <input
-                  className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mb-2"
-                  type="password" placeholder="Current Password" />
-                <p className="text-lg text-leaf-green">New Password</p>
-                <input
-                  className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mb-2"
-                  type="password" placeholder="New Password" />
-                <p className="text-lg text-leaf-green">Confirm Password</p>
-                <input
-                  className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mb-2"
-                  type="password" placeholder="Confirm Password" />
-                <button
-                    className="mt-5 tracking-wide font-semibold bg-secondary-green text-gray-100 w-full py-4 rounded-lg hover:bg-green-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
-                    <span className="ml-3">
-                      Update Details
-                    </span>
-                </button>
-              </div>
-            </div>
-        </div>
+            <p className="text-lg text-secondary-green">
+              Welcome to your profile page, please change your details here
+            </p>
+          </div>
 
+          <div className="w-full flex-1 mt-8">
+            <div className="mx-auto max-w-xs">
+              <p className="text-lg text-leaf-green">First Name</p>
+              <input
+                className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mb-2"
+                type="text"
+                placeholder={userFirstName}
+              />
+              <p className="text-lg text-leaf-green">Surname</p>
+              <input
+                className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mb-2"
+                type="text"
+                placeholder={userSurname}
+              />
+              <p className="text-lg text-leaf-green">Email</p>
+              <input
+                className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mb-2"
+                type="email"
+                placeholder={userEmail}
+              />
+              <p className="text-lg text-leaf-green">Current Password</p>
+              <input
+                className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mb-2"
+                type="password"
+                placeholder="Current Password"
+              />
+              <p className="text-lg text-leaf-green">New Password</p>
+              <input
+                className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mb-2"
+                type="password"
+                placeholder="New Password"
+              />
+              <p className="text-lg text-leaf-green">Confirm Password</p>
+              <input
+                className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mb-2"
+                type="password"
+                placeholder="Confirm Password"
+              />
+              <button
+                className="mt-5 tracking-wide font-semibold bg-secondary-green text-gray-100 w-full py-4 rounded-lg hover:bg-green-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none"
+              >
+                <span className="ml-3">Update Details</span>
+              </button>
+            </div>
+          </div>
+        </div>
         <div className="flex justify-center items-center flex-row mt-[35rem] pt-4 px-10 border-t-2 border-leaf-green-40 "/>
 
         {/* footer */}
